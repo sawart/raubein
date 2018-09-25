@@ -1,10 +1,172 @@
 /* Scss Document */
 
-$maincolor: blue;
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,700');
+
+$mainColor: #000;
+$secColor: #FFF;
+$border: 4px solid #000;
+$wborder: 4px solid #FFF;
+$font: 'Work Sans', sans-serif;
+@mixin fontDefault {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+@mixin flexRowWrap {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+body, html {
+	font-family: $font;
+	font-size: 1rem;
+	font-weight: 300;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+h2 {
+	@include fontDefault;
+	font-size: 1rem;
+	
+	&:after {
+		content: "";
+		display: block;
+		width: 30px;
+		height: 2px;
+		background: $mainColor;
+		margin: 1em auto;
+	}
+}
+
+h5, h1 {
+	font-weight: 700;
+	font-size: 2.5rem;
+	@include fontDefault;
+}
 
 h1 {
-	color: $maincolor;
+	color: $mainColor;
 }
+
+h5 {
+	color: $secColor;
+}
+
+.button {
+	border: $wborder;
+	background: transparent;
+	color: $secColor;
+	font-size: 1.2rem;
+	padding: .5em 2em;
+}
+
+a {
+	text-decoration: none;
+	color: $mainColor;
+	@include fontDefault;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+header {
+	@include flexRowWrap;
+	justify-content: space-between;
+	margin-top: 1em;
+	height: 80px;
 	
+	.logo {
+		width: 300px;
+		height: auto;
+	}
+	
+	nav {
+		@include flexRowWrap;
+		justify-content: flex-end;
+		
+		ul {
+			@include flexRowWrap;
+			list-style: none;
+		}
+
+		li {
+			margin-right: 2em;
+		}
+
+		a {
+			text-transform: uppercase;
+		}
+	}
+	
+	.login {
+		
+	}
+	
+	.search {
+		background: url(../gfx/icons/search.svg) no-repeat center center;
+		background-size: 30% 30%;
+		height: 50px;
+		width: 50px;
+		border: $border;
+		margin-left: 2em;
+	}
+}
+
+.spotlight {
+	display: flex;
+	flex-flow: row nowrap;
+	
+	.arrival {
+		max-width: 900px;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		div {
+			position: absolute;
+		}
+	}
+	
+	.teaser {
+		display: flex;
+		flex-flow: column nowrap;
+		margin-left: 10px;
+			
+		.teaserItem {
+			display: flex;
+			flex-flow: row nowrap;
+			max-width: 500px;
+
+			img {
+				width: 250px;
+				height: 250px;
+			}
+
+			div {
+				text-align: center;
+				padding: 1em;
+			}
+		}
+	}
+	
+}
+
+.imagePart {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	margin: 4em 0;
+	
+	.imageText {
+		padding: 0 4em;
+		width: 45%;
+	}
+}
+
 
 

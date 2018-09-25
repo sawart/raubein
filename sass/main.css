@@ -1,3 +1,115 @@
 /* Scss Document */
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,700");
+body, html {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0; }
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1rem; }
+  h2:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #000;
+    margin: 1em auto; }
+
+h5, h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
+
 h1 {
-  color: blue; }
+  color: #000; }
+
+h5 {
+  color: #FFF; }
+
+.button {
+  border: 4px solid #FFF;
+  background: transparent;
+  color: #FFF;
+  font-size: 1.2rem;
+  padding: .5em 2em; }
+
+a {
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
+
+img {
+  width: 100%;
+  height: auto; }
+
+header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-top: 1em;
+  height: 80px; }
+  header .logo {
+    width: 300px;
+    height: auto; }
+  header nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end; }
+    header nav ul {
+      display: flex;
+      flex-flow: row wrap;
+      list-style: none; }
+    header nav li {
+      margin-right: 2em; }
+    header nav a {
+      text-transform: uppercase; }
+  header .search {
+    background: url(../gfx/icons/search.svg) no-repeat center center;
+    background-size: 30% 30%;
+    height: 50px;
+    width: 50px;
+    border: 4px solid #000;
+    margin-left: 2em; }
+
+.spotlight {
+  display: flex;
+  flex-flow: row nowrap; }
+  .spotlight .arrival {
+    max-width: 900px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .spotlight .arrival div {
+      position: absolute; }
+  .spotlight .teaser {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 10px; }
+    .spotlight .teaser .teaserItem {
+      display: flex;
+      flex-flow: row nowrap;
+      max-width: 500px; }
+      .spotlight .teaser .teaserItem img {
+        width: 250px;
+        height: 250px; }
+      .spotlight .teaser .teaserItem div {
+        text-align: center;
+        padding: 1em; }
+
+.imagePart {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4em 0; }
+  .imagePart .imageText {
+    padding: 0 4em;
+    width: 45%; }
