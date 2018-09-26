@@ -180,14 +180,34 @@ header {
 
 		li {
 			margin-right: 2em;
-			
-			&:hover {
-				border-bottom: 4px solid $mainColor;
-			}
+			display: inline-block;
+		
 		}
 		
 		a {
 			text-transform: uppercase;
+			display: block;
+			position: relative;
+			margin: 0 .5em;
+			padding: 0 0 10px 0;
+		}
+		
+		a:after {
+			transition: all .5s;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			width: 0%;
+			content: '.';
+			color: transparent;
+			background: $mainColor;
+			height: 4px;
+		}
+		
+		a:hover:after {
+			width: 100%;
 		}
 	
 	}

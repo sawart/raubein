@@ -131,11 +131,28 @@ header {
       flex-flow: row wrap;
       height: 30px; }
     header nav li {
-      margin-right: 2em; }
-      header nav li:hover {
-        border-bottom: 4px solid #000; }
+      margin-right: 2em;
+      display: inline-block; }
     header nav a {
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      display: block;
+      position: relative;
+      margin: 0 .5em;
+      padding: 0 0 10px 0; }
+    header nav a:after {
+      transition: all .5s;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 0%;
+      content: '.';
+      color: transparent;
+      background: #000;
+      height: 4px; }
+    header nav a:hover:after {
+      width: 100%; }
   header .search {
     background: url(../gfx/icons/search.svg) no-repeat center center;
     background-size: 30% 30%;
