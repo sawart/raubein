@@ -51,14 +51,38 @@ h5 {
   background: transparent;
   color: #FFF;
   font-size: 1.2rem;
+  font-weight: 700;
   padding: .5em 2em; }
+
+.fill:hover,
+.fill:focus {
+  box-shadow: inset 0 0 0 2em #FFF; }
+
+.button {
+  color: #FFF;
+  transition: 0.5s; }
+  .button:hover, .button:focus {
+    border-color: #FFF;
+    color: #000; }
 
 .bbutton {
   border: 4px solid #000;
   background: transparent;
   color: #000;
   font-size: 1.2rem;
-  padding: .5em 2em; }
+  padding: .5em 2em;
+  font-weight: 700; }
+
+.bfill:hover,
+.bfill:focus {
+  box-shadow: inset 0 0 0 2em #000; }
+
+.bbutton {
+  color: #000;
+  transition: .5s; }
+  .bbutton:hover, .bbutton:focus {
+    border-color: #000;
+    color: #FFF; }
 
 a {
   text-decoration: none;
@@ -104,9 +128,12 @@ header {
     justify-content: flex-end; }
     header nav ul {
       display: flex;
-      flex-flow: row wrap; }
+      flex-flow: row wrap;
+      height: 30px; }
     header nav li {
       margin-right: 2em; }
+      header nav li:hover {
+        border-bottom: 4px solid #000; }
     header nav a {
       text-transform: uppercase; }
   header .search {

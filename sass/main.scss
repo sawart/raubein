@@ -76,7 +76,24 @@ h5 {
 	background: transparent;
 	color: $secColor;
 	font-size: 1.2rem;
+	font-weight: 700;
 	padding: .5em 2em;
+}
+
+.fill:hover,
+.fill:focus {
+  box-shadow: inset 0 0 0 2em $secColor;
+}
+
+.button {  
+  color: $secColor;;
+  transition: 0.5s;
+  
+  &:hover,
+  &:focus { 
+    border-color: $secColor;
+    color: $mainColor;
+  }
 }
 
 .bbutton {
@@ -85,7 +102,26 @@ h5 {
 	color: $mainColor;
 	font-size: 1.2rem;
 	padding: .5em 2em;
+	font-weight: 700;
 }
+
+.bfill:hover,
+.bfill:focus {
+  box-shadow: inset 0 0 0 2em $mainColor;
+}
+
+.bbutton {  
+  color: $mainColor;
+  transition: .5s;
+  
+  &:hover,
+  &:focus { 
+    border-color: $mainColor;
+    color: $secColor;
+  }
+}
+
+
 
 a {
 	text-decoration: none;
@@ -139,15 +175,21 @@ header {
 		
 		ul {
 			@include flexRowWrap;
+			height: 30px;
 		}
 
 		li {
 			margin-right: 2em;
+			
+			&:hover {
+				border-bottom: 4px solid $mainColor;
+			}
 		}
-
+		
 		a {
 			text-transform: uppercase;
 		}
+	
 	}
 	
 	.login {
