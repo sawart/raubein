@@ -1,6 +1,8 @@
 // JavaScript Document
 
+
 $(document).ready(function() {
+	"use strict";
 	
 	// INITIATE THE FOOTER
   siteFooter();
