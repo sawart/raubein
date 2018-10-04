@@ -75,8 +75,7 @@ h5 {
 
 .bfill:hover,
 .bfill:focus {
-  box-shadow: inset 0 0 0 2em #000;
-  z-index: 0; }
+  box-shadow: inset 0 0 0 2em #000; }
 
 .bbutton {
   color: #000;
@@ -122,7 +121,7 @@ header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  padding-top: 1em;
+  padding: 1em 1em 0;
   height: 80px;
   max-width: 1440px;
   margin: 0 auto;
@@ -190,13 +189,12 @@ header {
         height: auto;
         z-index: 2;
         position: absolute;
-        top: 64px;
         left: 0;
         right: 0;
         padding: 2em 0;
         background: #FFF;
         text-align: center;
-        transition: .5s all ease-in-out; }
+        animation: .5s navAni; }
         header nav ul li {
           display: block;
           margin: 1.5em 0 0 0; }
@@ -210,7 +208,13 @@ header {
         top: .8em;
         display: block; }
     header ul.active {
-      display: flex; } }
+      display: flex;
+      top: 64px; }
+    @keyframes navAni {
+      0% {
+        top: -250px; }
+      100% {
+        top: 64px; } } }
   header .search {
     background: url(../gfx/icons/search.svg) no-repeat center center;
     background-size: 30% 30%;
@@ -218,60 +222,70 @@ header {
     width: 50px;
     border: 4px solid #000;
     margin-left: 2em;
-    padding: 0 !important; }
+    padding: 0 !important;
+    transition: .5s; }
   header .search:hover {
-    cursor: pointer;
+    cursor: pointer; }
+  header .search:hover span {
+    display: block;
     background: url(../gfx/icons/search_white.svg) no-repeat center center;
     background-size: 30% 30%;
-    background-color: #000;
+    height: 50px;
+    width: 50px;
     z-index: 2; }
+  header .sfill:hover {
+    box-shadow: inset 0 0 0 2em #000;
+    z-index: 1; }
 
-.spotlight {
+.spotlight, .social {
   display: flex;
   flex-flow: row wrap;
   margin-top: 80px; }
-  .spotlight .arrival {
+  .spotlight .arrival, .social .arrival {
     max-width: 900px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center; }
-    .spotlight .arrival div {
+    .spotlight .arrival div, .social .arrival div {
       position: absolute; }
-  .spotlight .teaser {
+  .spotlight .teaser, .social .teaser {
     display: flex;
     flex-flow: column nowrap;
     margin-left: 10px; }
-    .spotlight .teaser .teaserItem {
+    .spotlight .teaser .teaserItem, .social .teaser .teaserItem {
       display: flex;
       flex-flow: row nowrap;
       max-width: 500px; }
-      .spotlight .teaser .teaserItem img {
+      .spotlight .teaser .teaserItem img, .social .teaser .teaserItem img {
         width: 250px;
         height: 250px; }
-      .spotlight .teaser .teaserItem div {
-        text-align: center; }
-      .spotlight .teaser .teaserItem p {
+      .spotlight .teaser .teaserItem div, .social .teaser .teaserItem div {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; }
+      .spotlight .teaser .teaserItem p, .social .teaser .teaserItem p {
         font-size: .9em;
-        padding: 1em; }
+        padding: 0 1em; }
 
 @media (max-width: 1440px) {
-  .spotlight, header, .imagePart, .imagePartRev {
+  .spotlight, .imagePart, .imagePartRev {
     padding: 0 1em; }
-    .spotlight .arrival, header .arrival, .imagePart .arrival, .imagePartRev .arrival {
+    .spotlight .arrival, .imagePart .arrival, .imagePartRev .arrival {
       max-width: 100%;
       width: 100%; }
-    .spotlight .teaser, header .teaser, .imagePart .teaser, .imagePartRev .teaser {
+    .spotlight .teaser, .imagePart .teaser, .imagePartRev .teaser {
       flex-flow: row wrap;
       max-width: 100%;
       width: 100%;
       margin: 10px 0 0 0; }
-      .spotlight .teaser .teaserItem, header .teaser .teaserItem, .imagePart .teaser .teaserItem, .imagePartRev .teaser .teaserItem {
+      .spotlight .teaser .teaserItem, .imagePart .teaser .teaserItem, .imagePartRev .teaser .teaserItem {
         max-width: 50%;
         width: 50%; }
-      .spotlight .teaser .teaserItem:nth-child(2) .flexItem:nth-child(1), header .teaser .teaserItem:nth-child(2) .flexItem:nth-child(1), .imagePart .teaser .teaserItem:nth-child(2) .flexItem:nth-child(1), .imagePartRev .teaser .teaserItem:nth-child(2) .flexItem:nth-child(1) {
+      .spotlight .teaser .teaserItem:nth-child(2) .flexItem:nth-child(1), .imagePart .teaser .teaserItem:nth-child(2) .flexItem:nth-child(1), .imagePartRev .teaser .teaserItem:nth-child(2) .flexItem:nth-child(1) {
         order: 2; }
-      .spotlight .teaser .teaserItem:nth-child(2) .flexItem:nth-child(2), header .teaser .teaserItem:nth-child(2) .flexItem:nth-child(2), .imagePart .teaser .teaserItem:nth-child(2) .flexItem:nth-child(2), .imagePartRev .teaser .teaserItem:nth-child(2) .flexItem:nth-child(2) {
+      .spotlight .teaser .teaserItem:nth-child(2) .flexItem:nth-child(2), .imagePart .teaser .teaserItem:nth-child(2) .flexItem:nth-child(2), .imagePartRev .teaser .teaserItem:nth-child(2) .flexItem:nth-child(2) {
         order: 1; } }
 @media (max-width: 992px) {
   .spotlight .arrival {
@@ -357,6 +371,42 @@ header {
     justify-content: center; }
     .bestProducts .bestItem {
       max-width: 50%; } }
+.social .quote {
+  position: relative; }
+  .social .quote h1 {
+    color: #FFF;
+    font-size: 2rem;
+    padding: 0 4em; }
+  .social .quote p {
+    color: #FFF;
+    font-weight: 700; }
+.social figcaption {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  text-align: center; }
+  .social figcaption div:nth-child(2) {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    bottom: 1em; }
+.social .socialText {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 2em; }
+  .social .socialText p {
+    column-count: 2;
+    column-gap: 2em; }
+  .social .socialText div:first-child {
+    width: 33.3%; }
+  .social .socialText div:nth-child(2) {
+    width: 66.6%; }
+
 .siteFooter {
   position: fixed;
   display: flex;
@@ -401,7 +451,7 @@ header {
     .siteFooter .copyright p {
       font-size: .7em; }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .parallax {
     margin: 0 auto 0; }
 
@@ -427,6 +477,29 @@ header {
     width: 80%; }
   .imagePartRev .imageFlexRev:nth-child(1), .imagePartRev img, .imagePartRev .imageFlexRev div:nth-child(1) {
     max-width: none; } }
-@media (max-width: 450px) {
+@media (max-width: 550px) {
   h5 {
-    font-size: 1.5rem; } }
+    font-size: 1.5rem; }
+
+  .spotlight .teaser .teaserItem {
+    flex-flow: column nowrap; }
+    .spotlight .teaser .teaserItem .flexItem:nth-child(1) {
+      order: 2; }
+    .spotlight .teaser .teaserItem .flexItem:nth-child(2) {
+      order: 1; }
+    .spotlight .teaser .teaserItem p {
+      padding: 0 2em 4em; }
+    .spotlight .teaser .teaserItem h2 {
+      padding-top: 3em; }
+
+  .imageText {
+    column-count: 1 !important; }
+
+  .imageImg img:nth-child(2) {
+    display: none !important; }
+
+  .bestProducts .bestItem {
+    max-width: none; }
+
+  .imageTextRev {
+    width: 100% !important; } }

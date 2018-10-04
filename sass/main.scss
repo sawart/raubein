@@ -108,7 +108,6 @@ h5 {
 .bfill:hover,
 .bfill:focus {
  	box-shadow: inset 0 0 0 2em $mainColor;
-	z-index: 0;
 }
 
 .bbutton {  
@@ -167,7 +166,7 @@ header {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
-	padding-top: 1em;
+	padding: 1em 1em 0;
 	height: 80px;
 	max-width: 1440px;
 	margin: 0 auto;
@@ -260,13 +259,12 @@ header {
 				height: auto;
 				z-index: 2;
 				position: absolute;
-				top: 64px;
 				left: 0;
 				right: 0;
 				padding: 2em 0;
 				background: $secColor;
 				text-align: center;
-				transition: .5s all ease-in-out;
+				animation: .5s navAni;
 				
 				li {
 					display: block;
@@ -293,12 +291,20 @@ header {
 		
 		ul.active {
 			display: flex;
+			top: 64px;
+		}
+		
+		@keyframes navAni {
+			0% {
+				top: -250px;
+			}
+			
+			100% {
+				top: 64px;
+			}
 		}
 	}
 	
-	.login {
-		
-	}
 	
 	.search {
 		background: url(../gfx/icons/search.svg) no-repeat center center;
@@ -308,18 +314,30 @@ header {
 		border: $border;
 		margin-left: 2em;
 		padding: 0 !important;
+		transition: .5s;
+		
 	}
 	
 	.search:hover {
 		cursor: pointer;
+	}
+	
+	.search:hover span {
+		display: block;
 		background: url(../gfx/icons/search_white.svg) no-repeat center center;
 		background-size: 30% 30%;
-		background-color: $mainColor;
+		height: 50px;
+		width: 50px;
 		z-index: 2;
+	} 
+	
+	.sfill:hover {
+		box-shadow: inset 0 0 0 2em $mainColor;
+		z-index: 1;
 	}
 }
 
-.spotlight {
+.spotlight, .social  {
 	display: flex;
 	flex-flow: row wrap;
 	margin-top: 80px;
@@ -353,12 +371,15 @@ header {
 
 			div {
 				text-align: center;
+				display: flex;
+				flex-direction: column;
+				justify-content: center,
 				
 			}
 			
 			p {
 				font-size: .9em;
-				padding: 1em;
+				padding: 0 1em;
 			}
 		}
 	}
@@ -367,7 +388,7 @@ header {
 
 @media (max-width: 1440px) {
 	
-	.spotlight, header, .imagePart, .imagePartRev {
+	.spotlight, .imagePart, .imagePartRev {
 		padding: 0 1em;
 		
 		.arrival {
@@ -546,6 +567,62 @@ header {
 	}
 }
 
+.social {
+	.quote {
+		position: relative;
+		
+		h1 {
+			color: $secColor;
+			font-size: 2rem;
+			padding: 0 4em;
+		}
+		
+		p {
+			color: $secColor;
+			font-weight: 700;
+		}
+	}
+	
+	figcaption {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		text-align: center;
+		
+		div:nth-child(2){
+			position: absolute;
+			display: flex;
+			width: 100%;
+			justify-content: center;
+			bottom: 1em;
+		}
+	}
+	
+	
+	.socialText {
+		display: flex;
+		flex-flow: row wrap;
+		margin-top: 2em;
+		
+		p {
+			column-count: 2;
+			column-gap: 2em;
+		}
+		
+		div:first-child {
+			width: 33.3%;
+		}
+		
+		div:nth-child(2){
+			width: 66.6%;
+		}
+	}
+}
+
 
 .siteFooter {
 	position: fixed;
@@ -616,7 +693,7 @@ header {
 	}
 }
 
-@media(max-width: 768px) {
+@media(max-width: 1024px) {
 	.parallax {
 		margin: 0 auto 0;
 	}
@@ -663,10 +740,53 @@ header {
 
 }
 
-@media(max-width: 450px) {
+@media(max-width: 550px) {
 	h5 {
 		font-size: 1.5rem;
 	}
+	
+	.spotlight {
+		.teaser {
+			.teaserItem {
+				flex-flow: column nowrap;
+				
+				.flexItem:nth-child(1) {
+					order: 2;
+				} 
+				
+				.flexItem:nth-child(2) {
+					order: 1;
+				} 
+				
+				p {
+					padding: 0 2em 4em;
+				}
+				
+				h2 {
+					padding-top: 3em;
+				}
+			}
+		}
+	}
+	
+	.imageText {
+		column-count: 1 !important;
+	}
+	
+	.imageImg img:nth-child(2) {
+		display: none !important;
+	}
+	
+	.bestProducts {
+		.bestItem {
+			max-width: none;
+		}
+	}
+	
+	.imageTextRev {
+		width: 100% !important;
+	}
+	
 }
 
 
