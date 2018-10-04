@@ -1,5 +1,6 @@
 // JavaScript Document
 
+/*
 
 $(document).ready(function() {
 	"use strict";
@@ -29,4 +30,12 @@ $(document).ready(function() {
 			"margin-bottom" : siteFooterHeight + 50
 		});
 	}
+});
+
+*/
+
+$(document).ready(function(){
+	$(".hburger").on("click", function(){
+		$("nav ul").toggleClass("active");
+	});
 });

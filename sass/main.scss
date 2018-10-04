@@ -107,7 +107,8 @@ h5 {
 
 .bfill:hover,
 .bfill:focus {
-  box-shadow: inset 0 0 0 2em $mainColor;
+ 	box-shadow: inset 0 0 0 2em $mainColor;
+	z-index: 0;
 }
 
 .bbutton {  
@@ -159,10 +160,19 @@ input[type="submit"] {
 }
 
 header {
-	@include flexRowWrap;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	flex-flow: row nowrap;
 	justify-content: space-between;
-	margin-top: 1em;
+	padding-top: 1em;
 	height: 80px;
+	max-width: 1440px;
+	margin: 0 auto;
+	background: $secColor;
+	z-index: 2;
 	
 	.logo {
 		width: 300px;
@@ -209,7 +219,81 @@ header {
 		a:hover:after {
 			width: 100%;
 		}
+		
+		.hburger {
+			margin-top: .8em;
+			display: none;
+			
+			span {
+				display: block;
+				width: 50px;
+				height: 4px;
+				background: $mainColor;
+				-moz-transition: .5s ease-in-out all;
+				transition: .5s ease-in-out all;
+			}
+			
+			span:nth-child(2), span:nth-child(3) {
+				margin-top: 8px;
+			}	
+		}
+		
+		.hburger:hover {
+			cursor: pointer;
+			span:nth-child(3), span:nth-child(1) {
+				width: 45px;
+			}
+		}
 	
+	}
+	
+	@media(max-width: 1280px ) {
+		nav {
+			display: flex;
+			flex-flow: column nowrap;
+			width: 100%;
+			
+			ul {
+				display: none;
+				flex-flow: column nowrap;
+				width: 100%;
+				height: auto;
+				z-index: 2;
+				position: absolute;
+				top: 64px;
+				left: 0;
+				right: 0;
+				padding: 2em 0;
+				background: $secColor;
+				text-align: center;
+				transition: .5s all ease-in-out;
+				
+				li {
+					display: block;
+					margin: 1.5em 0 0 0;
+						
+					a {
+						display: inline-block;
+					}
+				}
+			}
+			
+			.login, .search {
+				display: none;
+			}
+			
+			.hburger {
+				position: fixed;
+				right: 2em;
+				top: .8em;
+				display: block;
+				
+			}
+		}
+		
+		ul.active {
+			display: flex;
+		}
 	}
 	
 	.login {
@@ -223,12 +307,22 @@ header {
 		width: 50px;
 		border: $border;
 		margin-left: 2em;
+		padding: 0 !important;
+	}
+	
+	.search:hover {
+		cursor: pointer;
+		background: url(../gfx/icons/search_white.svg) no-repeat center center;
+		background-size: 30% 30%;
+		background-color: $mainColor;
+		z-index: 2;
 	}
 }
 
 .spotlight {
 	display: flex;
 	flex-flow: row wrap;
+	margin-top: 80px;
 	
 	.arrival {
 		max-width: 900px;
@@ -259,11 +353,12 @@ header {
 
 			div {
 				text-align: center;
-				padding: 1em;
+				
 			}
 			
 			p {
 				font-size: .9em;
+				padding: 1em;
 			}
 		}
 	}
@@ -273,7 +368,7 @@ header {
 @media (max-width: 1440px) {
 	
 	.spotlight, header, .imagePart, .imagePartRev {
-		padding: 0 2em;
+		padding: 0 1em;
 		
 		.arrival {
 			max-width: 100%;
@@ -326,8 +421,11 @@ header {
 				width: 100%;
 				
 				.flexItem {
-					width: 50%;
-					height: 50%;
+					width: 100%;
+					height: 100%;
+					display: flex;
+					justify-content: center;
+					flex-flow: column nowrap;
 					
 				}
 			}
@@ -362,7 +460,11 @@ header {
 					display: none;
 				}
 			}
-	}
+		}
+	
+		.imageFlexRev div:nth-child(1) {
+			max-width: 50%;
+		}	
 }
 
 .bestProducts {
@@ -453,12 +555,18 @@ header {
 	bottom: 0;
 	left: 0;
 	width: 100%;
+	padding-bottom: 3em;
 	/* height: 450px; */
 	background: $grey;
 	z-index: -1;
 	
 	a {
 		text-transform: none;
+		transition: .5s all ease-in-out;
+	}
+	
+	a:hover {
+		font-weight: 700;
 	}
 	
 	li {
@@ -517,12 +625,47 @@ header {
 		justify-content: center;
 		position: relative;
 		z-index: 1;
+		text-align: center;
 		
 		.footerItem {
 			width: 100%;
-			padding: 2em;
+			padding: 0 2em 2em;
 			margin: 0;
 		}
+		
+		.payments {
+			max-width: none;
+			justify-content: center;
+		}
+		
+		ul ul {
+			padding: 0;
+		}
+		
+		.copyright {
+			position: relative;
+			left: 0;
+		}
+	}
+	
+	.imagePartRev {
+		.imageFlexRev {
+			.imageTextRev {
+				width: 80%;
+			}
+		}
+		
+		.imageFlexRev:nth-child(1), img, .imageFlexRev div:nth-child(1) {
+			max-width: none;
+		}
+	}
+	
+
+}
+
+@media(max-width: 450px) {
+	h5 {
+		font-size: 1.5rem;
 	}
 }
 
