@@ -312,6 +312,23 @@ header {
       order: 1; }
     .spotlight .teaser .teaserItem:nth-child(2) .flexItem:nth-child(2) {
       order: 2; } }
+@media (max-width: 767px) {
+  .contactInfo {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+
+  .formCol {
+    float: none !important;
+    width: 100% !important; }
+
+  input, textarea {
+    width: 100% !important;
+    box-sizing: border-box; }
+
+  input[type="submit"] {
+    margin: 0 !important;
+    padding: .5em; } }
 .imagePart, .imagePartRev {
   margin: 4em 0; }
   .imagePart .imageFlex, .imagePart .imageFlexRev, .imagePartRev .imageFlex, .imagePartRev .imageFlexRev {
@@ -418,14 +435,10 @@ header {
     width: 50%; }
     .contact .contactItem .phone, .contact .contactItem .mail {
       margin-top: 3em;
-      position: relative; }
-      .contact .contactItem .phone span:nth-child(1), .contact .contactItem .mail span:nth-child(1) {
-        background: url(../gfx/icons/phone.svg) no-repeat;
-        background-size: 30% 30%;
-        margin-bottom: 1em; }
-      .contact .contactItem .phone span:nth-child(2), .contact .contactItem .mail span:nth-child(2) {
-        background: url(../gfx/icons/mail.svg) no-repeat;
-        background-size: 30% 30%; }
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 2em; }
       .contact .contactItem .phone span, .contact .contactItem .mail span {
         display: block;
         position: absolute;
@@ -437,6 +450,22 @@ header {
         margin-left: 2em;
         padding: 0 !important;
         transition: .5s; }
+      .contact .contactItem .phone a, .contact .contactItem .mail a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-transition: .5s all ease-in-out;
+        -moz-transition: .5s all ease-in-out;
+        transition: .5s all ease-in-out; }
+        .contact .contactItem .phone a:hover, .contact .contactItem .mail a:hover {
+          font-weight: 700; }
+  .contact .phone span {
+    background: url(../gfx/icons/phone.svg) no-repeat;
+    background-size: 30% 30%;
+    margin-bottom: 1em; }
+  .contact .mail span {
+    background: url(../gfx/icons/mail.svg) no-repeat;
+    background-size: 30% 30%; }
 
 .contactForm .formRow, .contactForm .submit {
   width: 50%; }
@@ -533,7 +562,18 @@ header {
   .imagePartRev .imageFlexRev .imageTextRev {
     width: 80%; }
   .imagePartRev .imageFlexRev:nth-child(1), .imagePartRev img, .imagePartRev .imageFlexRev div:nth-child(1) {
-    max-width: none; } }
+    max-width: none; }
+
+  .formRow, .submit, .contactItem, .contactForm {
+    width: 100% !important;
+    padding: 1em !important;
+    box-sizing: border-box;
+    text-align: center; }
+
+  .contactInfo {
+    display: flex;
+    justify-content: space-around;
+    width: 100%; } }
 @media (max-width: 550px) {
   h5 {
     font-size: 1.5rem; }

@@ -463,6 +463,29 @@ header {
 	}
 }
 
+@media (max-width: 767px) {
+	.contactInfo {
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	
+	.formCol {
+		float: none !important;
+		width: 100% !important;
+	}
+	
+	input, textarea {
+		width: 100% !important;
+		box-sizing: border-box;
+	}
+	
+	input[type="submit"] {
+		margin: 0 !important;
+		padding: .5em;
+	}
+}
+
 .imagePart, .imagePartRev {
 		margin: 4em 0;
 	
@@ -637,17 +660,9 @@ header {
 		.phone, .mail {
 			margin-top: 3em;
 			position: relative;
-			
-			span:nth-child(1){
-				background: url(../gfx/icons/phone.svg) no-repeat;
-				background-size: 30% 30%;
-				margin-bottom: 1em;
-			}
-			
-			span:nth-child(2){
-				background: url(../gfx/icons/mail.svg) no-repeat;
-				background-size: 30% 30%;
-			}
+			display: flex;
+			align-items: center;
+			height: 2em;
 			
 			span {
 				display: block;
@@ -661,8 +676,33 @@ header {
 				padding: 0 !important;
 				transition: .5s;
 			}
+			
+			a {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				-webkit-transition: .5s all ease-in-out;
+				-moz-transition: .5s all ease-in-out;
+				transition: .5s all ease-in-out;
+				
+				&:hover {
+					font-weight: 700;
+				}
+			}
 		}
-	}
+		
+		}
+			
+			.phone span {
+				background: url(../gfx/icons/phone.svg) no-repeat;
+				background-size: 30% 30%;
+				margin-bottom: 1em;
+			}
+			
+			.mail span {
+				background: url(../gfx/icons/mail.svg) no-repeat;
+				background-size: 30% 30%;
+			}
 }
 
 
@@ -823,6 +863,19 @@ header {
 		.imageFlexRev:nth-child(1), img, .imageFlexRev div:nth-child(1) {
 			max-width: none;
 		}
+	}
+	
+	.formRow, .submit, .contactItem, .contactForm {
+		width: 100% !important;
+		padding: 1em !important;
+		box-sizing: border-box;
+		text-align: center;
+	}
+	
+	.contactInfo {
+		display: flex;
+		justify-content: space-around;
+		width: 100%;
 	}
 	
 
