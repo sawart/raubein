@@ -493,6 +493,38 @@ header {
   .contactForm .submit input[type="submit"]:hover {
     color: #FFF; }
 
+.people {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 80px; }
+  .people .peopleItem {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 50%; }
+  .people .peopleImg, .people .peopleText {
+    width: 50%; }
+  .people .peopleText {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 0 2em;
+    box-sizing: border-box; }
+    .people .peopleText a, .people .peopleText h4 {
+      text-align: left;
+      width: 100%; }
+    .people .peopleText:after {
+      content: "";
+      position: absolute;
+      left: -25px;
+      display: block;
+      width: 50px;
+      height: 50px;
+      background: #FFF;
+      transform: rotate(-45deg); }
+
 .siteFooter {
   position: fixed;
   display: flex;
