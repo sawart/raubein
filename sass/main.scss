@@ -143,7 +143,7 @@ img {
 	height: auto;
 }
 
-input {
+input, textarea {
 	border: $border;
 	padding: 1em 2em;
 	width: 200px;
@@ -337,7 +337,7 @@ header {
 	}
 }
 
-.spotlight, .social  {
+.spotlight, .social, .contact  {
 	display: flex;
 	flex-flow: row wrap;
 	margin-top: 80px;
@@ -622,6 +622,94 @@ header {
 		}
 	}
 }
+
+.contact {
+	display: flex;
+	flex-direction: row;
+	
+	.contactItem {
+		box-sizing: border-box;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 50%;
+		
+		.phone, .mail {
+			margin-top: 3em;
+			position: relative;
+			
+			span:nth-child(1){
+				background: url(../gfx/icons/phone.svg) no-repeat;
+				background-size: 30% 30%;
+				margin-bottom: 1em;
+			}
+			
+			span:nth-child(2){
+				background: url(../gfx/icons/mail.svg) no-repeat;
+				background-size: 30% 30%;
+			}
+			
+			span {
+				display: block;
+				position: absolute;
+				background-position: center center;
+				left: -105px;
+				height: 50px;
+				width: 50px;
+				border: $border;
+				margin-left: 2em;
+				padding: 0 !important;
+				transition: .5s;
+			}
+		}
+	}
+}
+
+
+.contactForm {
+	.formRow, .submit {
+		width: 50%;
+
+		.formCol {
+			width: 50%;
+			float: left;
+		}
+
+		.formCol:nth-child(1) {
+			display: flex; 
+			flex-direction: column;
+		}
+
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+		input, textarea {
+			width: 84%;
+			margin-top: .8em;
+		}
+	}
+	
+	.submit {
+		display: flex;
+		justify-content: flex-end;
+		
+		input[type="submit"] {
+			width: 190px;
+			margin-right: .75em;
+			background: transparent;
+			color: $mainColor;
+		}
+		
+		input[type="submit"]:hover {
+			color: $secColor;
+		}
+	}
+}
+
+
 
 
 .siteFooter {
