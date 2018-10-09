@@ -1,38 +1,33 @@
 // JavaScript Document
 
-/*
+$(window).resize(function(){
 
-$(document).ready(function() {
-	"use strict";
-	
-	// INITIATE THE FOOTER
-  siteFooter();
-	// COULD BE SIMPLIFIED FOR THIS PEN BUT I WANT TO MAKE IT AS EASY TO PUT INTO YOUR SITE AS POSSIBLE
-	$(window).resize(function() {
-		siteFooter();
-	});
-	
-	function siteFooter() {
-		var siteContent = $('.siteContent');
-		var siteContentHeight = siteContent.height();
-		var siteContentWidth = siteContent.width();
+       if ($(window).width() <= 1024) {  
 
-		var siteFooter = $('.siteFooter');
-		var siteFooterHeight = siteFooter.height();
-		var siteFooterWidth = siteFooter.width();
 
-		console.log('Content Height = ' + siteContentHeight + 'px');
-		console.log('Content Width = ' + siteContentWidth + 'px');
-		console.log('Footer Height = ' + siteFooterHeight + 'px');
-		console.log('Footer Width = ' + siteFooterWidth + 'px');
+				function siteFooter() {
+					var siteContent = $('.siteContent');
+					var siteContentHeight = siteContent.height();
+					var siteContentWidth = siteContent.width();
 
-		siteContent.css({
-			"margin-bottom" : siteFooterHeight + 50
-		});
-	}
+					var siteFooter = $('.siteFooter');
+					var siteFooterHeight = siteFooter.height();
+					var siteFooterWidth = siteFooter.width();
+
+					console.log('Content Height = ' + siteContentHeight + 'px');
+					console.log('Content Width = ' + siteContentWidth + 'px');
+					console.log('Footer Height = ' + siteFooterHeight + 'px');
+					console.log('Footer Width = ' + siteFooterWidth + 'px');
+
+					siteContent.css({
+						"margin-bottom" : siteFooterHeight + 50
+					});
+				}
+			});
+       }     
 });
 
-*/
+
 
 $(document).ready(function(){
 	$(".hburger").on("click", function(){

@@ -71,6 +71,11 @@ h5 {
 	color: $secColor;
 }
 
+h4 {
+	@include fontDefault;
+	font-size: 1em;
+}
+
 .button {
 	border: $wborder;
 	background: transparent;
@@ -461,6 +466,15 @@ header {
 			}
 		}
 	}
+	
+	.philosophy {
+		flex-flow: column nowrap !important;
+		padding: 1em;
+		
+		.philosophyItem {
+			width: 100% !important;
+		}
+	}
 }
 
 @media (max-width: 767px) {
@@ -764,7 +778,7 @@ header {
 		width: 50%;
 	}
 	
-	.peopleText,  {
+	.peopleText {
 		position: relative;
 		display: flex; 
 		flex-direction: column;
@@ -773,27 +787,89 @@ header {
 		text-align: left;
 		padding: 0 2em;
 		box-sizing: border-box;
+		z-index: 1;
 		
 		a, h4 {
 			text-align: left;
 			width: 100%;
 		}
-		
-		&:after {
-			content: "";
-			position: absolute;
-			left: -25px;
-			display: block;
-			width: 50px;
-			height: 50px;
-			background: $secColor;
-			transform: rotate(-45deg);
-		}
 	}
 }
 
+.people .peopleItem:nth-child(3) .peopleText, .people .peopleItem:nth-child(4) .peopleText  {
+	&:before {
+		content: "";
+		position: absolute;
+		right: -25px;
+		display: block;
+		width: 50px;
+		height: 50px;
+		background: $secColor;
+		transform: rotate(-45deg);
+		z-index: -1;
+	}
+}
 
+.people .peopleItem:nth-child(1) .peopleText, .people .peopleItem:nth-child(2) .peopleText {
+	&:before {
+		content: "";
+		position: absolute;
+		left: -25px;
+		display: block;
+		width: 50px;
+		height: 50px;
+		background: $secColor;
+		transform: rotate(-45deg);
+		z-index: -1;
+	}
+}
 
+.philosophy {
+	margin-top: 80px;
+	display: flex;
+	flex-flow: row wrap;
+	
+	.philosophyItem {
+		box-sizing: border-box;
+		width: 50%;
+	}
+	
+	.philosophyItem:nth-child(2) {
+		padding: 2em;
+	}
+	
+	.connect {
+		border: $border;
+		padding: 2em;
+		margin-top: 5em;
+		width: 75%;
+		
+		a {
+			display: flex;
+			margin-top: 2em;
+			transition: .5s all ease-in-out;
+			
+			&:hover {
+				font-weight: 700;
+			}
+			
+			&:hover:after {
+				margin-left: 10px;
+			}
+			
+			&:after {
+				content: "";
+				background: url(../gfx/icons/right-arrow.svg) no-repeat;
+				background-size: contain;
+				display: inline-block;
+				height: 25px;
+				width: 25px;
+				margin-left: 30px;
+				transition: .5s all ease-in-out;
+			}
+		}
+	}
+}
 
 
 .siteFooter {
@@ -922,6 +998,14 @@ header {
 		width: 100%;
 	}
 	
+	.people {
+		flex-direction: column !important;
+		
+		.peopleItem {
+			width: 100%;
+		}
+	}
+	
 
 }
 
@@ -970,6 +1054,30 @@ header {
 	
 	.imageTextRev {
 		width: 100% !important;
+	}
+	
+	.people {
+		.peopleItem {
+			flex-direction: column !important;
+			
+			.itemRev:nth-child(1) {
+				order: 2;
+			}
+			
+			.peopleText, .peopleImg {
+				width: 100% !important; 
+				box-sizing: border-box;
+				padding: 0 1em;
+			}
+			
+			.peopleText {
+				padding: 2em 1em 4em;
+				
+				&:before {
+					display: none !important;
+				}
+			}
+		}
 	}
 	
 }
