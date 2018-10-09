@@ -30,6 +30,7 @@ body, html {
 	position: relative;
 	width: 100%;
 	min-height: 100vh;
+	min-height: 100%;
 	background: $secColor;
 	-webkit-box-shadow: #CCC 0 7px 10px 0;
 	-moz-box-shadow: #CCC 0 7px 10px 0;
@@ -767,6 +768,10 @@ header {
 	display: flex;
 	flex-flow: row wrap;
 	margin-top: 80px;
+	
+	a {
+		text-transform: lowercase;
+	}
 	
 	.peopleItem {
 		display: flex; 
