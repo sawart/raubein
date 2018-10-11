@@ -7,6 +7,21 @@ body, html {
   padding: 0;
   margin: 0; }
 
+/* PREVIEW */
+.preview {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0 1em; }
+  .preview .previewItem:nth-child(2) {
+    max-width: 100%;
+    text-align: center; }
+
+/* PREVIEW END */
 .siteContent {
   z-index: 1;
   position: relative;
@@ -262,18 +277,47 @@ header {
     .spotlight .teaser .teaserItem, .social .teaser .teaserItem, .contact .teaser .teaserItem {
       display: flex;
       flex-flow: row nowrap;
-      max-width: 500px; }
+      max-width: 500px;
+      -moz-transition: .5s ease-in-out all;
+      -webkit-transition: .5s ease-in-out all;
+      transition: .5s ease-in-out all; }
       .spotlight .teaser .teaserItem img, .social .teaser .teaserItem img, .contact .teaser .teaserItem img {
         width: 250px;
         height: 250px; }
       .spotlight .teaser .teaserItem div, .social .teaser .teaserItem div, .contact .teaser .teaserItem div {
+        position: relative;
         text-align: center;
         display: flex;
         flex-direction: column;
-        justify-content: center; }
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%; }
       .spotlight .teaser .teaserItem p, .social .teaser .teaserItem p, .contact .teaser .teaserItem p {
         font-size: .9em;
-        padding: 0 1em; }
+        padding: 0 1em;
+        z-index: -1; }
+      .spotlight .teaser .teaserItem figcaption, .social .teaser .teaserItem figcaption, .contact .teaser .teaserItem figcaption {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 1em;
+        transform: scale(0.2);
+        z-index: 1;
+        opacity: 1;
+        animation: arrowAni .8s ease-in-out; }
+@keyframes arrowAni {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+      .spotlight .teaser .teaserItem:hover, .social .teaser .teaserItem:hover, .contact .teaser .teaserItem:hover {
+        cursor: pointer;
+        background: #FFF; }
+      .spotlight .teaser .teaserItem:hover figcaption, .social .teaser .teaserItem:hover figcaption, .contact .teaser .teaserItem:hover figcaption {
+        display: block; }
 
 @media (max-width: 1440px) {
   .spotlight, .imagePart, .imagePartRev {
@@ -400,45 +444,48 @@ header {
     justify-content: center; }
     .bestProducts .bestItem {
       max-width: 50%; } }
-.social .quote {
-  position: relative; }
-  .social .quote h1 {
-    color: #FFF;
-    font-size: 2rem;
-    padding: 0 4em; }
-  .social .quote p {
-    color: #FFF;
-    font-weight: 700; }
-.social figcaption {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  text-align: center; }
-  .social figcaption div:nth-child(2) {
+.social {
+  padding: 0 1em; }
+  .social .quote {
+    position: relative; }
+    .social .quote h1 {
+      color: #FFF;
+      font-size: 2rem;
+      padding: 0 4em; }
+    .social .quote p {
+      color: #FFF;
+      font-weight: 700; }
+  .social figcaption {
     position: absolute;
     display: flex;
-    width: 100%;
     justify-content: center;
-    bottom: 1em; }
-.social .socialText {
-  display: flex;
-  flex-flow: row wrap;
-  margin-top: 2em; }
-  .social .socialText p {
-    column-count: 2;
-    column-gap: 2em; }
-  .social .socialText div:first-child {
-    width: 33.3%; }
-  .social .socialText div:nth-child(2) {
-    width: 66.6%; }
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    text-align: center; }
+    .social figcaption div:nth-child(2) {
+      position: absolute;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      bottom: 1em; }
+  .social .socialText {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 2em; }
+    .social .socialText p {
+      column-count: 2;
+      column-gap: 2em; }
+    .social .socialText div:first-child {
+      width: 33.3%; }
+    .social .socialText div:nth-child(2) {
+      width: 66.6%; }
 
 .contact {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  padding: 0 1em; }
   .contact .contactItem {
     box-sizing: border-box;
     display: flex;
@@ -479,31 +526,34 @@ header {
     background: url(../gfx/icons/mail.svg) no-repeat;
     background-size: 30% 30%; }
 
-.contactForm .formRow, .contactForm .submit {
-  width: 50%; }
-  .contactForm .formRow .formCol, .contactForm .submit .formCol {
-    width: 50%;
-    float: left; }
-  .contactForm .formRow .formCol:nth-child(1), .contactForm .submit .formCol:nth-child(1) {
+.contactForm {
+  padding: 0 1em; }
+  .contactForm .formRow, .contactForm .submit {
+    width: 50%; }
+    .contactForm .formRow .formCol, .contactForm .submit .formCol {
+      width: 50%;
+      float: left; }
+    .contactForm .formRow .formCol:nth-child(1), .contactForm .submit .formCol:nth-child(1) {
+      display: flex;
+      flex-direction: column;
+      padding-right: 1em;
+      box-sizing: border-box; }
+    .contactForm .formRow:after, .contactForm .submit:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .contactForm .formRow input, .contactForm .formRow textarea, .contactForm .submit input, .contactForm .submit textarea {
+      width: 84%;
+      margin-top: .8em; }
+  .contactForm .submit {
     display: flex;
-    flex-direction: column; }
-  .contactForm .formRow:after, .contactForm .submit:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .contactForm .formRow input, .contactForm .formRow textarea, .contactForm .submit input, .contactForm .submit textarea {
-    width: 84%;
-    margin-top: .8em; }
-.contactForm .submit {
-  display: flex;
-  justify-content: flex-end; }
-  .contactForm .submit input[type="submit"] {
-    width: 190px;
-    margin-right: .75em;
-    background: transparent;
-    color: #000; }
-  .contactForm .submit input[type="submit"]:hover {
-    color: #FFF; }
+    justify-content: flex-end; }
+    .contactForm .submit input[type="submit"] {
+      width: 190px;
+      background: transparent;
+      color: #000; }
+    .contactForm .submit input[type="submit"]:hover {
+      color: #FFF; }
 
 .people {
   display: flex;
