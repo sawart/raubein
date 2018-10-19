@@ -158,10 +158,15 @@ header {
     header nav ul {
       display: flex;
       flex-flow: row wrap;
-      height: 30px; }
+      height: 100%;
+      margin: 0;
+      padding-top: 1em; }
     header nav li {
       margin-right: 2em;
       display: inline-block; }
+    header nav li:first-child:hover .dropdownContent {
+      display: block;
+      animation: dropAniIn 1s; }
     header nav a {
       text-transform: uppercase;
       display: block;
@@ -198,6 +203,59 @@ header {
       cursor: pointer; }
       header nav .hburger:hover span:nth-child(3), header nav .hburger:hover span:nth-child(1) {
         width: 45px; }
+    header nav .dropdownContent {
+      position: absolute;
+      display: block;
+      width: 100%;
+      top: 96px;
+      left: 0;
+      right: 0;
+      background-color: #FFF;
+      /*
+      @keyframes dropAniIn {
+      	0% {
+      		opacity: 0;
+      	}
+      	
+      	100% {
+      		opacity: 1;
+      	} 
+      }
+      
+      */ }
+      header nav .dropdownContent .dropdownMenu {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: calc(1440px);
+        height: 400px;
+        background-color: #FAFAFA;
+        margin: 0 auto;
+        padding: 0; }
+        header nav .dropdownContent .dropdownMenu li {
+          display: flex;
+          justify-content: center;
+          flex-direction: column; }
+          header nav .dropdownContent .dropdownMenu li a {
+            margin-top: 1em;
+            -moz-transition: .5s ease-in-out all;
+            -webkit-transition: .5s ease-in-out all;
+            transition: .5s ease-in-out all; }
+            header nav .dropdownContent .dropdownMenu li a:hover {
+              font-weight: 700; }
+            header nav .dropdownContent .dropdownMenu li a:after {
+              display: none; }
+        header nav .dropdownContent .dropdownMenu .dropCol-1, header nav .dropdownContent .dropdownMenu .dropCol-2 {
+          padding-top: 2em; }
+        header nav .dropdownContent .dropdownMenu .dropCol-1 {
+          padding-left: 2em; }
+        header nav .dropdownContent .dropdownMenu .dropCol-2 a {
+          color: red;
+          font-weight: 700; }
+        header nav .dropdownContent .dropdownMenu .dropCol-3 {
+          width: 50%;
+          height: 100%;
+          overflow: hidden; }
   @media (max-width: 1280px) {
     header nav {
       display: flex;
