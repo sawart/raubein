@@ -1,5 +1,11 @@
 // JavaScript Document
 
+$(document).ready(function(){
+	$(".hburger").on("click", function(){
+		$(".navEffect").toggleClass("active");
+	});
+});
+
 $(window).resize(function(){
 
        if ($(window).width() <= 1024) {  
@@ -10,11 +16,11 @@ $(window).resize(function(){
 					// INITIATE THE FOOTER
 				  siteFooter();
 					// COULD BE SIMPLIFIED FOR THIS PEN BUT I WANT TO MAKE IT AS EASY TO PUT INTO YOUR SITE AS POSSIBLE
-				/*	$(window).resize(function() {
+					$(window).resize(function() {
 						siteFooter();
 					}); 
 					
-				*/
+				
 
 					function siteFooter() {
 						var siteContent = $('.siteContent');
@@ -35,14 +41,9 @@ $(window).resize(function(){
 						});
 					}
 				});
-			});
-       }     
+			};
+       /*}    */ 
 });
 
 
 
-$(document).ready(function(){
-	$(".hburger").on("click", function(){
-		$("nav ul").toggleClass("active");
-	});
-});

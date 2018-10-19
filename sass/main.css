@@ -205,24 +205,17 @@ header {
         width: 45px; }
     header nav .dropdownContent {
       position: absolute;
-      display: block;
+      display: none;
       width: 100%;
       top: 96px;
       left: 0;
       right: 0;
-      background-color: #FFF;
-      /*
-      @keyframes dropAniIn {
-      	0% {
-      		opacity: 0;
-      	}
-      	
-      	100% {
-      		opacity: 1;
-      	} 
-      }
-      
-      */ }
+      background-color: #FFF; }
+@keyframes dropAniIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
       header nav .dropdownContent .dropdownMenu {
         display: flex;
         justify-content: space-between;
@@ -286,9 +279,36 @@ header {
         right: 2em;
         top: .8em;
         display: block; }
+      header nav .dropdownContent {
+        top: 196px;
+        z-index: 1; }
+        header nav .dropdownContent .dropdownMenu {
+          position: absolute;
+          top: 0;
+          flex-direction: column;
+          align-items: center;
+          height: auto;
+          background: #FFF;
+          z-index: 1; }
+          header nav .dropdownContent .dropdownMenu li {
+            margin: 0;
+            padding: 0; }
+            header nav .dropdownContent .dropdownMenu li a {
+              margin: 0; }
+          header nav .dropdownContent .dropdownMenu .dropCol-1 {
+            padding: 0; }
+          header nav .dropdownContent .dropdownMenu .dropCol-3 {
+            display: none; }
     header ul.active {
       display: flex;
-      top: 64px; }
+      top: 0;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      z-index: -1; }
+      header ul.active ul {
+        animation: none; }
     @keyframes navAni {
       0% {
         top: -250px; }
@@ -335,6 +355,7 @@ header {
     .spotlight .teaser .teaserItem, .social .teaser .teaserItem, .contact .teaser .teaserItem {
       display: flex;
       flex-flow: row nowrap;
+      align-items: center;
       max-width: 500px;
       -moz-transition: .5s ease-in-out all;
       -webkit-transition: .5s ease-in-out all;
@@ -354,6 +375,7 @@ header {
       .spotlight .teaser .teaserItem p, .social .teaser .teaserItem p, .contact .teaser .teaserItem p {
         font-size: .9em;
         padding: 0 1em;
+        margin: 0;
         z-index: -1; }
       .spotlight .teaser .teaserItem figcaption, .social .teaser .teaserItem figcaption, .contact .teaser .teaserItem figcaption {
         display: none;

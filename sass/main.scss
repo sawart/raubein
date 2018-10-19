@@ -287,14 +287,14 @@ header {
 		
 		.dropdownContent {
 			position: absolute;
-			display: block;
+			display: none; 
 			width: 100%;
 			top: 96px;
 			left: 0;
 			right: 0;
 			background-color: $secColor;
 			
-			/*
+			
 			@keyframes dropAniIn {
 				0% {
 					opacity: 0;
@@ -303,9 +303,9 @@ header {
 				100% {
 					opacity: 1;
 				} 
-			}
+			} 
 			
-			*/
+			
 			
 			.dropdownMenu {
 				display: flex;
@@ -399,11 +399,54 @@ header {
 				display: block;
 				
 			}
+			
+			.dropdownContent {
+				top: 196px;
+				z-index: 1;
+				
+				.dropdownMenu {
+					position: absolute;
+					top: 0;
+					flex-direction: column;
+					align-items: center;
+					height: auto;
+					background: $secColor;
+					z-index: 1;
+					
+					li {
+						margin: 0;
+						padding: 0;
+
+						a {
+							margin: 0;
+						}
+					}
+					
+					.dropCol-1 {
+					padding: 0;
+				}
+				
+					.dropCol-3 {
+						display: none;
+					}
+				}
+				
+				
+			}
 		}
 		
 		ul.active {
 			display: flex;
-			top: 64px;
+			top: 0;
+			height: 100vh;
+			align-items: center;
+			justify-content: center;
+			box-sizing: border-box;
+			z-index: -1;
+			
+			ul {
+				animation: none;
+			}
 		}
 		
 		@keyframes navAni {
@@ -474,6 +517,7 @@ header {
 		.teaserItem {
 			display: flex;
 			flex-flow: row nowrap;
+			align-items: center;
 			max-width: 500px;
 			@include transition;
 
@@ -497,6 +541,7 @@ header {
 			p {
 				font-size: .9em;
 				padding: 0 1em;
+				margin: 0;
 				z-index: -1;
 			}
 			
