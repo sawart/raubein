@@ -3,6 +3,13 @@
 $(document).ready(function(){
 	$(".hburger").on("click", function(){
 		$(".navEffect").toggleClass("active");
+		if($(".navEffect").hasClass("active")){
+			$(".search").css("display", "block");
+			$(".login").css("display", "block");
+		} else {
+			$(".search").css("display", "none");
+			$(".login").css("display", "none");
+		}
 	});
 });
 
@@ -44,6 +51,14 @@ $(window).resize(function(){
 			};
        /*}    */ 
 });
+
+
+if($(window).innerWidth() < 1280) {
+ 
+} else {
+   
+}
+
 
 
 
