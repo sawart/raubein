@@ -1,0 +1,23 @@
+/* Scss Document */
+
+$mainColor: #000;
+$secColor: #FFF;
+$grey: #F7F7F7;
+$border: 4px solid #000;
+$wborder: 4px solid #FFF;
+$font: 'Work Sans', sans-serif;
+@mixin fontDefault {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+@mixin flexRowWrap {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+@mixin transition {
+	-moz-transition: .5s ease-in-out all;
+	-webkit-transition: .5s ease-in-out all;
+	transition: .5s ease-in-out all;
+}
+
