@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,700');
 
+
 $mainColor: #000;
 $secColor: #FFF;
 $grey: #F7F7F7;
@@ -31,7 +32,6 @@ body, html {
 	padding: 0;
 	margin: 0;
 }
-
 
 header {
 	position: fixed;
@@ -69,11 +69,6 @@ header {
 			display: inline-block;
 		
 		}
-		
-		/*li:first-child:hover .dropdownContent {
-			display: block;
-			animation: dropAniIn 1s;
-		} */
 
 		a {
 			text-transform: uppercase;
@@ -135,19 +130,6 @@ header {
 			right: 0;
 			background-color: $secColor;
 			
-			/*
-			@keyframes dropAniIn {
-				0% {
-					opacity: 0;
-				}
-				
-				100% {
-					opacity: 1;
-				} 
-			} 
-			*/
-			
-			
 			ul {
 				display: flex;
 				justify-content: space-between;
@@ -168,7 +150,7 @@ header {
 						@include transition;
 						
 						&:hover {
-							font-weight: 700;
+							letter-spacing: 1px;
 						}
 						
 						&:after {
@@ -183,15 +165,21 @@ header {
 				
 				.dropCol-1 {
 					padding-left: 2em;
+					width: 375px
 				}
 				
-				.dropCol-2 a {
-					color: red;
-					font-weight: 700;
+				.dropCol-2 {
+					width: 20%;
+					max-width: 250px;
+					
+					a {
+						color: red;
+						font-weight: 700;
+					}	
 				}
 				
 				.dropCol-3 {
-					width: 50%;
+					width: 45%;
 					height: 100%;
 					overflow: hidden;
 				}
@@ -231,6 +219,15 @@ header {
 	.sfill:hover {
 		box-shadow: inset 0 0 0 2em $mainColor;
 		z-index: 1;
+	}
+	
+	.login a {
+		text-transform: none;
+		margin-top: 1em;
+		
+		&:after {
+			display: none;
+		}
 	}
 }
 
@@ -290,19 +287,28 @@ header {
 				right: 0;
 				text-align: center;
 				background: $secColor;
+				opacity: 0;
+				visibility: hidden;
+				transition: all .5s ease;
 				z-index: -1;
 			}
 			
+			.openNav {
+				visibility: visible;
+				opacity: 1;
+			}
+			
 			.dropdownContent {
-				display: block !important; 
-				z-index: 1;
+				opacity: 0;
+				visibility: hidden;
+				transition: all .5s ease;
 				
 				ul {
 					height: 100vh;
 				}
 				
 				li {
-					line-height: 24px;
+					line-height: 16px;
 					margin: 0;
 					
 					a {
@@ -313,6 +319,14 @@ header {
 				.dropCol-1, .dropCol-2 {
 					padding: 0 !important;
 					width: 100%;
+				}
+				
+				.dropCol-1 {
+					margin-top: 120px;
+				}
+				
+				.dropCol-2 {
+					margin-top: -100px;
 				}
 				
 				.dropCol-3 {
@@ -326,6 +340,19 @@ header {
 						color: $mainColor !important;
 					}
 				}
+			}
+			
+			.openSubNav {
+				display: flex;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 100vh;
+				visibility: visible;
+				opacity: 1;
+				z-index: 1;
+				
 			}
 		}
 	}	
@@ -354,6 +381,7 @@ header {
 		
 	}
 }
+
 
 
 /* PREVIEW */
@@ -504,15 +532,22 @@ input, textarea {
 	border: $border;
 	padding: 1em 2em;
 	width: 200px;
+	border-radius: 0 !important;
+	background: transparent !important;
 }
 
 input[type="submit"] {
 	cursor: pointer;
 	width: 50px;
-	background: $mainColor;
+	background: $mainColor !important;
 	color: $secColor;
 	text-transform: uppercase;
 	padding-right: 3.5em;
+	height: 40px;
+	border-radius: 0 !important;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 .spotlight, .social, .contact  {
