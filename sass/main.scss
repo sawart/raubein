@@ -202,7 +202,7 @@ input[type="submit"] {
 	appearance: none;
 }
 
-.spotlight, .social, .contact  {
+.spotlight, .contact  {
 	display: flex;
 	flex-flow: row wrap;
 	margin-top: 80px;
@@ -504,23 +504,13 @@ input[type="submit"] {
 	}
 }
 
-.social {
+.service {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: flex-start;
+	margin-top: 150px;
+	height: 100vh;
 	padding: 0 1em;
-	
-	.quote {
-		position: relative;
-		
-		h1 {
-			color: $secColor;
-			font-size: 2rem;
-			padding: 0 4em;
-		}
-		
-		p {
-			color: $secColor;
-			font-weight: 700;
-		}
-	}
 	
 	figcaption {
 		position: absolute;
@@ -541,24 +531,33 @@ input[type="submit"] {
 		}
 	}
 	
+	div:first-child {
+		width: 33.33%;
+	}
 	
-	.socialText {
+	div:nth-child(2) {
+		width: 66.66%;
+	}
+	
+	
+	.serviceText {
 		display: flex;
 		flex-flow: row wrap;
-		margin-top: 2em;
+		margin-top: 1em;
 		
-		p {
-			column-count: 2;
-			column-gap: 2em;
+		div {
+			width: 50%;
+			box-sizing: border-box;
 		}
 		
-		div:first-child {
-			width: 33.3%;
+		div:nth-child(1), div:nth-child(3) {
+			padding-right: 1.5em;
 		}
 		
-		div:nth-child(2){
-			width: 66.6%;
+		div:nth-child(2), div:nth-child(4) {
+			padding-left: 1.5em;
 		}
+		
 	}
 }
 
