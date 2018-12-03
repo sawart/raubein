@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$secColor".
-        on line 17 of /Applications/XAMPP/xamppfiles/htdocs/raubein/wp-content/themes/raubein/sass/menu.scss
+        on line 13 of /Applications/XAMPP/xamppfiles/htdocs/raubein/wp-content/themes/raubein/sass/menu.scss
 
-12: 	justify-content: space-between;
-13: 	padding: 1em 1em 0;
-14: 	height: 80px;
-15: 	max-width: 1440px;
-16: 	margin: 0 auto;
-17: 	background: $secColor;
-18: 	z-index: 2;
-19: 	
-20: 	.logo {
-21: 		width: 300px;
-22: 		height: auto;
+8: 	justify-content: space-between;
+9: 	padding: 1em 1em 0;
+10: 	height: 80px;
+11: 	max-width: 1440px;
+12: 	margin: 0 auto;
+13: 	background: $secColor;
+14: 	z-index: 2;
+15: 	
+16: 	.logo {
+17: 		width: 300px;
+18: 		height: auto;
 
 Backtrace:
-/Applications/XAMPP/xamppfiles/htdocs/raubein/wp-content/themes/raubein/sass/menu.scss:17
+/Applications/XAMPP/xamppfiles/htdocs/raubein/wp-content/themes/raubein/sass/menu.scss:13
 /Applications/Adobe Dreamweaver CC 2019/Adobe Dreamweaver CC 2019.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver CC 2019/Adobe Dreamweaver CC 2019.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver CC 2019/Adobe Dreamweaver CC 2019.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -61,4 +61,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$secColor\".\A         on line 17 of /Applications/XAMPP/xamppfiles/htdocs/raubein/wp-content/themes/raubein/sass/menu.scss\A \A 12: 	justify-content: space-between;\A 13: 	padding: 1em 1em 0;\A 14: 	height: 80px;\A 15: 	max-width: 1440px;\A 16: 	margin: 0 auto;\A 17: 	background: $secColor;\A 18: 	z-index: 2;\A 19: 	\A 20: 	.logo {\A 21: 		width: 300px;\A 22: 		height: auto;"; }
+  content: "Error: Undefined variable: \"$secColor\".\A         on line 13 of /Applications/XAMPP/xamppfiles/htdocs/raubein/wp-content/themes/raubein/sass/menu.scss\A \A 8: 	justify-content: space-between;\A 9: 	padding: 1em 1em 0;\A 10: 	height: 80px;\A 11: 	max-width: 1440px;\A 12: 	margin: 0 auto;\A 13: 	background: $secColor;\A 14: 	z-index: 2;\A 15: 	\A 16: 	.logo {\A 17: 		width: 300px;\A 18: 		height: auto;"; }
