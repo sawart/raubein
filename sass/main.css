@@ -16,7 +16,7 @@ header {
   z-index: 2; }
   header .logo {
     width: 300px;
-    height: auto; }
+    height: 80px; }
   header nav {
     display: flex;
     flex-flow: row wrap;
@@ -415,6 +415,8 @@ input[type="submit"] {
         justify-content: center;
         width: 100%;
         height: 100%; }
+      .spotlight .teaser .teaserItem a, .contact .teaser .teaserItem a {
+        text-transform: none; }
       .spotlight .teaser .teaserItem p, .contact .teaser .teaserItem p {
         font-size: .9em;
         padding: 0 1em;
@@ -507,7 +509,14 @@ input[type="submit"] {
 
   input[type="submit"] {
     margin: 0 !important;
-    padding: .5em; } }
+    padding: .5em; }
+
+  .service {
+    flex-flow: column wrap; }
+    .service .serviceText {
+      width: 100%; }
+      .service .serviceText div {
+        width: 100%; } }
 .imagePart, .imagePartRev {
   margin: 4em 0; }
   .imagePart .imageFlex, .imagePart .imageFlexRev, .imagePartRev .imageFlex, .imagePartRev .imageFlexRev {
@@ -854,6 +863,8 @@ input[type="submit"] {
       order: 2; }
     .spotlight .teaser .teaserItem .flexItem:nth-child(2) {
       order: 1; }
+    .spotlight .teaser .teaserItem a {
+      text-transform: none; }
     .spotlight .teaser .teaserItem p {
       padding: 0 2em 4em; }
     .spotlight .teaser .teaserItem h2 {

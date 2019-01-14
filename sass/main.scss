@@ -248,6 +248,10 @@ input[type="submit"] {
 				
 			}
 			
+			a {
+				text-transform: none;
+			}
+			
 			p {
 				font-size: .9em;
 				padding: 0 1em;
@@ -397,6 +401,18 @@ input[type="submit"] {
 	input[type="submit"] {
 		margin: 0 !important;
 		padding: .5em;
+	}
+	
+	.service {
+		flex-flow: column wrap;
+		
+		.serviceText {
+			width: 100%;
+			
+			div {
+				width: 100%;
+			}
+		}
 	}
 }
 
@@ -935,6 +951,10 @@ input[type="submit"] {
 				.flexItem:nth-child(2) {
 					order: 1;
 				} 
+				
+				a {
+					text-transform: none;
+				}
 				
 				p {
 					padding: 0 2em 4em;
