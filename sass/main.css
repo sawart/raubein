@@ -572,7 +572,7 @@ input[type="submit"] {
   flex-flow: row nowrap;
   align-items: flex-start;
   margin-top: 150px;
-  height: 100vh;
+  min-height: 100vh;
   padding: 0 1em; }
   .service figcaption {
     position: absolute;
